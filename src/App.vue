@@ -72,7 +72,7 @@ watch([themeMode, systemDark], () => {
       <nav class="nav-links" aria-label="页面导航">
         <RouterLink to="/stickers">贴纸</RouterLink>
         <RouterLink to="/">关于</RouterLink>
-        <RouterLink to="/design">设计规范</RouterLink>
+        <RouterLink to="/design">设计</RouterLink>
       </nav>
     </div>
     <button class="theme-toggle" type="button" :aria-label="`切换主题，当前为${themeLabel}`" :title="themeLabel" @click="cycleTheme">

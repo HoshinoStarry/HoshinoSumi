@@ -101,7 +101,7 @@ const copySticker = async (sticker) => {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: clamp(4rem, 8vw, 6rem) clamp(1.4rem, 4vw, 3.5rem) clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.4rem, 4vw, 3.5rem);
   border: 1px solid var(--line);
   border-radius: clamp(1.5rem, 3vw, 2.6rem);
   background: var(--panel);
@@ -192,14 +192,6 @@ h1 {
   height: auto;
   object-fit: contain;
 }
-
-/* .banner-slot.is-empty::before {
-  content: "";
-  width: min(18rem, 70%);
-  aspect-ratio: 5 / 2;
-  border: 2px dashed rgba(95, 158, 234, 0.48);
-  border-radius: 1.5rem;
-} */
 
 .stats {
   display: grid;
@@ -374,7 +366,7 @@ h1 {
 }
 
 @media (max-width: 820px) {
-  .hero-section {
+  /* .hero-section {
     min-height: 0;
     flex-direction: column;
     align-items: flex-start;
@@ -397,7 +389,7 @@ h1 {
   .banner-slot img {
     width: 70%;
     max-height: none;
-  }
+  } */
 
   .stats {
     grid-template-columns: 1fr;

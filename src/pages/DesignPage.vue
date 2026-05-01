@@ -7,8 +7,8 @@ import { palette, stickerRules, visualKeywords } from "../data";
     <div class="design-section-outer">
       <section class="page-head design-hero">
         <div class="hero-copy">
-          <p class="eyebrow">Design Guide</p>
-          <h1>设计规范</h1>
+          <p class="eyebrow">Design</p>
+          <h1>设计</h1>
         </div>
         <figure class="design-banner" aria-hidden="true">
           <img src="/assets/sumi-design-banner-cutout.png" alt="" />
@@ -86,7 +86,7 @@ import { palette, stickerRules, visualKeywords } from "../data";
 .design-hero {
   display: flex;
   /* min-height: clamp(25rem, 36vw, 32rem); */
-  padding: clamp(4rem, 8vw, 6rem) clamp(1.4rem, 4vw, 3.5rem) clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.4rem, 4vw, 3.5rem);
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
@@ -267,7 +267,7 @@ h3 {
   font-weight: 900;
 }
 
-@media (max-width: 1100px) {
+/* @media (max-width: 1100px) {
   .color-row {
     grid-template-columns: 5rem 1fr 1fr;
   }
@@ -313,5 +313,5 @@ h3 {
     grid-template-columns: 1fr;
     gap: 0.45rem;
   }
-}
+} */
 </style>

@@ -22,7 +22,7 @@ import { character, designNotes, profile, profileStory, visualKeywords } from ".
 
 
     <section class="profile-section">
-
+      <p class="eyebrow">Profile</p>
       <div class="profile-grid" aria-label="人物资料">
         <article v-for="item in profile" :key="item[0]" class="info-card">
           <h3>{{ item[0] }}</h3>
@@ -34,8 +34,10 @@ import { character, designNotes, profile, profileStory, visualKeywords } from ".
       </div>
 
       <div class="profile-text">
-        <h2>PROFILE</h2>
-        <p v-for="paragraph in profileStory" :key="paragraph">{{ paragraph }}</p>
+        <p class="eyebrow">Story</p>
+        <div class="profile-story-content">
+          <p v-for="paragraph in profileStory" :key="paragraph">{{ paragraph }}</p>
+        </div>
       </div>
     </section>
     <!-- 
@@ -82,7 +84,7 @@ import { character, designNotes, profile, profileStory, visualKeywords } from ".
   align-items: flex-start;
   /* min-height: clamp(25rem, 36vw, 32rem); */
   margin-top: clamp(2rem, 5vw, 4rem);
-  padding: clamp(4rem, 8vw, 6rem) clamp(1.4rem, 4vw, 3.5rem) clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.4rem, 4vw, 3.5rem);
   border: 1px solid var(--line);
   border-radius: clamp(1.5rem, 3vw, 2.6rem);
   background: var(--panel);
@@ -279,14 +281,14 @@ h3 {
   margin-top: clamp(2.6rem, 6vw, 4.5rem);
 }
 
-.profile-text h2 {
+.profile-text .profile-story-content h2 {
   margin-bottom: 1.6rem;
   color: var(--navy);
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: 0.04em;
 }
 
-.profile-text p {
+.profile-text .profile-story-content p {
   margin: 0 0 1.35rem;
   color: var(--muted);
   font-size: clamp(1rem, 1.7vw, 1.18rem);
@@ -329,7 +331,7 @@ h3 {
   font-size: 0.92rem;
   font-weight: 900;
 }
-
+/* 
 @media (max-width: 820px) {
   .about-hero {
     min-height: 0;
@@ -444,5 +446,5 @@ h3 {
   .story-band blockquote {
     font-size: 1.35rem;
   }
-}
+} */
 </style>
