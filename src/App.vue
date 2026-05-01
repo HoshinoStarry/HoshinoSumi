@@ -8,6 +8,7 @@ const themeMode = ref(null);
 const systemDark = ref(false);
 const themeModes = ["light", "dark"];
 const currentYear = new Date().getFullYear();
+const githubUrl = "https://github.com/HoshinoStarry/HoshinoSumi";
 
 let mediaQuery;
 
@@ -92,9 +93,20 @@ watch([themeMode, systemDark], () => {
     </Transition>
   </RouterView>
 
-<footer class="site-footer">
-    <span>{{ currentYear }} © HoshinoStarry</span>
-    <span>除有特别声明，本站部分内容使用生成式人工智能生成</span>
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <a class="github-link" :href="githubUrl" target="_blank" rel="noreferrer" aria-label="GitHub 仓库" title="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 .5a12 12 0 0 0-3.8 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.8c1.02 0 2.05.14 3.01.4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"
+          />
+        </svg>
+      </a>
+      <span>{{ currentYear }} © HoshinoStarry</span>
+    </div>
+    <div class="footer-links">
+      <span>除有特别声明，本站部分内容使用生成式人工智能生成</span>
+    </div>
   </footer>
 </template>
 
@@ -264,6 +276,7 @@ watch([themeMode, systemDark], () => {
 
 .site-footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   margin-top: clamp(2rem, 5vw, 4rem);
@@ -272,6 +285,44 @@ watch([themeMode, systemDark], () => {
   font-size: 0.88rem;
   font-weight: 800;
   background: var(--footer-bg);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.9rem;
+  text-align: right;
+}
+
+.github-link {
+  display: grid;
+  flex: 0 0 auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--muted);
+  background: transparent;
+  transition:
+    color 150ms ease;
+}
+
+.github-link svg {
+  width: 1.18rem;
+  height: 1.18rem;
+  fill: currentColor;
+}
+
+.github-link:hover {
+  color: var(--blue-strong);
 }
 
 .page-fade-enter-active,
@@ -300,6 +351,19 @@ watch([themeMode, systemDark], () => {
   .page-fade-enter-from,
   .page-fade-leave-to {
     transform: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
   }
 }
 
