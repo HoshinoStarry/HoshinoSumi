@@ -1,0 +1,19 @@
+{
+  "name": "hoshino-sumi-profile",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.6",
+    "vite": "^5.4.21"
+  },
+  "dependencies": {
+    "vue": "^3.5.33",
+    "vue-router": "^5.0.6"
+  }
+}

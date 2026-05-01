@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "ChillRoundF";
+  src: url("https://cdn.jsdelivr.net/gh/Warren2060/ChillRound@main/ChillRoundF%20v3.0.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --ink: #151f3f;
+  --muted: #6a7897;
+  --paper: #f4f9ff;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-weak: rgba(255, 255, 255, 0.78);
+  --panel-blue: #eaf4ff;
+  --panel-offset: #b8d9ff;
+  --profile-card: rgba(238, 242, 247, 0.92);
+  --line: #d9e8f8;
+  --blue-strong: #5f9eea;
+  --violet: #7568bf;
+  --navy: #223866;
+  --gold: #ffe79a;
+  --accent: #f4b942;
+  --summary: #445576;
+  --nav-panel: rgba(255, 255, 255, 0.82);
+  --nav-text: #222b42;
+  --active-bg: var(--blue-strong);
+  --active-text: #ffffff;
+  --theme-toggle-bg: var(--blue-strong);
+  --theme-toggle-text: #ffffff;
+  --theme-toggle-border: var(--line);
+  --theme-toggle-hover-bg: var(--navy);
+  --theme-toggle-hover-text: #ffffff;
+  --deep-panel: #101724;
+  --chip-bg: #ffffff;
+  --chip-text: #415c8d;
+  --footer-bg: rgba(255, 255, 255, 0.62);
+  --swatch-border: rgba(21, 31, 63, 0.12);
+  --success: #24724a;
+  --danger: #9b3244;
+  --soft-shadow: 0 14px 34px rgba(34, 56, 102, 0.08);
+  --page-bg:
+    radial-gradient(circle at 16% 8%, rgba(255, 231, 154, 0.34), transparent 20rem),
+    radial-gradient(circle at 86% 20%, rgba(142, 199, 255, 0.35), transparent 26rem),
+    var(--paper);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --ink: #dbe8ff;
+    --muted: #9aabc9;
+    --paper: #07101f;
+    --panel: rgba(14, 24, 43, 0.86);
+    --panel-weak: rgba(17, 30, 52, 0.78);
+    --panel-blue: #132842;
+    --panel-offset: #28476f;
+    --profile-card: rgba(20, 31, 51, 0.94);
+    --line: #253b5d;
+    --blue-strong: #81b8ff;
+    --violet: #a99dff;
+    --navy: #dbe8ff;
+    --gold: #ffe79a;
+    --accent: #ffd35d;
+    --summary: #b8c8e6;
+    --nav-panel: rgba(11, 20, 36, 0.86);
+    --nav-text: #dbe8ff;
+    --active-bg: var(--blue-strong);
+    --active-text: #07101f;
+    --theme-toggle-bg: var(--blue-strong);
+    --theme-toggle-text: #07101f;
+    --theme-toggle-border: rgba(129, 184, 255, 0.56);
+    --theme-toggle-hover-bg: var(--blue-strong);
+    --theme-toggle-hover-text: #07101f;
+    --deep-panel: #0c1527;
+    --chip-bg: #132842;
+    --chip-text: #c6d7f4;
+    --footer-bg: rgba(11, 20, 36, 0.72);
+    --swatch-border: rgba(229, 240, 255, 0.2);
+    --success: #7fdca9;
+    --danger: #ff9aaa;
+    --soft-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+    --page-bg:
+      radial-gradient(circle at 16% 8%, rgba(255, 211, 93, 0.12), transparent 20rem),
+      radial-gradient(circle at 86% 20%, rgba(95, 158, 234, 0.18), transparent 26rem),
+      var(--paper);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #dbe8ff;
+  --muted: #9aabc9;
+  --paper: #07101f;
+  --panel: rgba(14, 24, 43, 0.86);
+  --panel-weak: rgba(17, 30, 52, 0.78);
+  --panel-blue: #132842;
+  --panel-offset: #28476f;
+  --profile-card: rgba(20, 31, 51, 0.94);
+  --line: #253b5d;
+  --blue-strong: #81b8ff;
+  --violet: #a99dff;
+  --navy: #dbe8ff;
+  --gold: #ffe79a;
+  --accent: #ffd35d;
+  --summary: #b8c8e6;
+  --nav-panel: rgba(11, 20, 36, 0.86);
+  --nav-text: #dbe8ff;
+  --active-bg: var(--blue-strong);
+  --active-text: #07101f;
+  --theme-toggle-bg: var(--blue-strong);
+  --theme-toggle-text: #07101f;
+  --theme-toggle-border: rgba(129, 184, 255, 0.56);
+  --theme-toggle-hover-bg: var(--blue-strong);
+  --theme-toggle-hover-text: #07101f;
+  --deep-panel: #0c1527;
+  --chip-bg: #132842;
+  --chip-text: #c6d7f4;
+  --footer-bg: rgba(11, 20, 36, 0.72);
+  --swatch-border: rgba(229, 240, 255, 0.2);
+  --success: #7fdca9;
+  --danger: #ff9aaa;
+  --soft-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+  --page-bg:
+    radial-gradient(circle at 16% 8%, rgba(255, 211, 93, 0.12), transparent 20rem),
+    radial-gradient(circle at 86% 20%, rgba(95, 158, 234, 0.18), transparent 26rem),
+    var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  font-family: "ChillRoundF", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  background: var(--page-bg);
+  transition:
+    color 240ms ease,
+    background 300ms ease;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: ease;
+}
+
+::view-transition-old(root) {
+  animation-name: theme-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: theme-fade-in;
+}
+
+@keyframes theme-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes theme-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+main {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+@media (max-width: 820px) {
+  main {
+    width: min(100% - 1rem, 1180px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1ms;
+  }
+}

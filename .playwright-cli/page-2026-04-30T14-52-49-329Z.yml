@@ -1,0 +1,48 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - navigation "页面导航" [ref=e5]:
+      - link "贴纸" [ref=e6] [cursor=pointer]:
+        - /url: /stickers
+      - link "关于" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - link "设计规范" [ref=e8] [cursor=pointer]:
+        - /url: /design
+    - button "切换主题，当前为浅色" [ref=e9] [cursor=pointer]:
+      - img [ref=e10]
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - paragraph [ref=e15]: About
+        - heading "星野澄" [level=1] [ref=e16]
+        - paragraph [ref=e17]: Hoshino Sumi
+        - paragraph [ref=e18]: 晴空、云朵、星星，与稳定运行的温柔。
+      - figure:
+        - img "星野澄 角色主视觉"
+    - generic [ref=e19]:
+      - generic "人物资料" [ref=e20]:
+        - article [ref=e21]:
+          - heading "BIRTH" [level=3] [ref=e22]
+          - paragraph [ref=e23]:
+            - strong [ref=e24]: 1970-01-01 00:00:00 UTC
+            - generic [ref=e25]: When UNIX time begins
+        - article [ref=e26]:
+          - heading "HEIGHT" [level=3] [ref=e27]
+          - paragraph [ref=e28]:
+            - strong [ref=e29]: 148cm
+        - article [ref=e30]:
+          - heading "ROLE" [level=3] [ref=e31]
+          - paragraph [ref=e32]:
+            - strong [ref=e33]: Cyber Girl
+        - article [ref=e34]:
+          - heading "DRESS CODE" [level=3] [ref=e35]
+          - paragraph [ref=e36]:
+            - strong [ref=e37]: Blue Hoodie
+            - generic [ref=e38]: "& Cloud Interface"
+      - generic [ref=e39]:
+        - heading "PROFILE" [level=2] [ref=e40]
+        - paragraph [ref=e41]: 星野澄被记录为诞生于 1970-01-01 00:00:00 UTC，像一段从 UNIX 时间起点醒来的温柔程序。她表面上是慢半拍、柔软又认真接住别人情绪的蓝发少女，实际上更像漂浮在聊天窗口里的赛博少女，把晴空、云朵和星星编译成可以复制的安慰。
+        - paragraph [ref=e42]: 她总是穿着宽大的蓝白云朵连帽衫，双丸子短发旁垂着星星、珠链与深蓝缎带。那些看起来像发饰的小物，也像轻量化的情绪接口：收到开心就闪一点星光，遇到低电量时就把云层调得更软。
+        - paragraph [ref=e43]: 星野澄的内核保持着安静而稳定的治愈逻辑。她会在困倦的眼神、袖口后的停顿和轻轻眨眼的表情里完成情绪缓存，再把它释放成一阵明亮、轻盈、随时可被接收到的蓝色信号。
+  - contentinfo [ref=e44]:
+    - generic [ref=e45]: 2026 © HoshinoStarry
+    - generic [ref=e46]: 除有特别声明，本站部分内容使用生成式人工智能生成

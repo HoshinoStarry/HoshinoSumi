@@ -1,0 +1,112 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - navigation "页面导航" [ref=e5]:
+      - link "贴纸" [ref=e6] [cursor=pointer]:
+        - /url: /stickers
+      - link "关于" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - link "设计规范" [ref=e8] [cursor=pointer]:
+        - /url: /design
+    - button "切换主题，当前为浅色" [ref=e9] [cursor=pointer]:
+      - img [ref=e10]
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - paragraph [ref=e15]: Design Guide
+        - heading "设计规范" [level=1] [ref=e16]
+      - figure
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - paragraph [ref=e19]: Palette
+        - heading "人物色系配色表" [level=2] [ref=e20]
+      - generic "人物色系配色表" [ref=e21]:
+        - article [ref=e22]:
+          - generic [ref=e24]:
+            - strong [ref=e25]: 晴空蓝
+            - code [ref=e26]: "#8EC7FF"
+          - paragraph [ref=e27]: 头发、衣服主色
+          - paragraph [ref=e28]: 作为角色主识别色，用于发色、袖口、按钮 hover。
+          - paragraph [ref=e29]: 避免整页大面积单色铺满。
+        - article [ref=e30]:
+          - generic [ref=e32]:
+            - strong [ref=e33]: 云影蓝
+            - code [ref=e34]: "#DCEEFF"
+          - paragraph [ref=e35]: 云纹、浅背景
+          - paragraph [ref=e36]: 适合卡片底、页面背景、贴纸卡片内衬。
+          - paragraph [ref=e37]: 避免和白色文字直接叠放。
+        - article [ref=e38]:
+          - generic [ref=e40]:
+            - strong [ref=e41]: 拉链蓝
+            - code [ref=e42]: "#5F9EEA"
+          - paragraph [ref=e43]: 线条、交互强调
+          - paragraph [ref=e44]: 用于链接、选中态、细线条和小图标。
+          - paragraph [ref=e45]: 避免替代深色正文。
+        - article [ref=e46]:
+          - generic [ref=e48]:
+            - strong [ref=e49]: 星饰金
+            - code [ref=e50]: "#FFE79A"
+          - paragraph [ref=e51]: 星星发夹、珠链
+          - paragraph [ref=e52]: 小面积点亮标题、徽章和重点标签。
+          - paragraph [ref=e53]: 避免做大面积背景。
+        - article [ref=e54]:
+          - generic [ref=e56]:
+            - strong [ref=e57]: 蓝紫瞳
+            - code [ref=e58]: "#7568BF"
+          - paragraph [ref=e59]: 眼睛、情绪重点
+          - paragraph [ref=e60]: 适合强调内核情绪和小型装饰。
+          - paragraph [ref=e61]: 避免压过主蓝色。
+        - article [ref=e62]:
+          - generic [ref=e64]:
+            - strong [ref=e65]: 缎带蓝
+            - code [ref=e66]: "#223866"
+          - paragraph [ref=e67]: 蝴蝶结、深色文字
+          - paragraph [ref=e68]: 用于正文、导航文字和高对比信息。
+          - paragraph [ref=e69]: 避免过多造成沉重感。
+        - article [ref=e70]:
+          - generic [ref=e72]:
+            - strong [ref=e73]: 云朵白
+            - code [ref=e74]: "#FFFFFF"
+          - paragraph [ref=e75]: 卫衣底色、白边
+          - paragraph [ref=e76]: 用于卡片、贴纸白边和留白。
+          - paragraph [ref=e77]: 需要搭配浅蓝边界。
+        - article [ref=e78]:
+          - generic [ref=e80]:
+            - strong [ref=e81]: 暖肤粉
+            - code [ref=e82]: "#FFE3D7"
+          - paragraph [ref=e83]: 肤色、脸红
+          - paragraph [ref=e84]: 用于害羞、治愈、温度感细节。
+          - paragraph [ref=e85]: 避免当作主要品牌色。
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - paragraph [ref=e89]: Sticker Rules
+          - heading "贴纸制作规范" [level=2] [ref=e90]
+        - generic [ref=e91]:
+          - article [ref=e92]:
+            - heading "透明 PNG" [level=3] [ref=e93]
+            - paragraph [ref=e94]: 每张贴纸保留 alpha 通道，四角透明，便于聊天和网页复制。
+          - article [ref=e95]:
+            - heading "白色贴纸边" [level=3] [ref=e96]
+            - paragraph [ref=e97]: 角色与小装饰外侧保留厚白边，深浅背景上都要清晰。
+          - article [ref=e98]:
+            - heading "低阴影" [level=3] [ref=e99]
+            - paragraph [ref=e100]: 优先用位移和色块产生层次，不依赖厚重投影。
+          - article [ref=e101]:
+            - heading "表情优先" [level=3] [ref=e102]
+            - paragraph [ref=e103]: 缩小到卡片尺寸时，眼睛、嘴型和手势仍要一眼读懂。
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - paragraph [ref=e106]: Identity
+          - heading "视觉关键词" [level=2] [ref=e107]
+        - generic [ref=e108]:
+          - generic [ref=e109]: 蓝白云系
+          - generic [ref=e110]: 双丸子短发
+          - generic [ref=e111]: 单侧星饰簇
+          - generic [ref=e112]: 透明白色羽瓣
+          - generic [ref=e113]: 深蓝缎带
+          - generic [ref=e114]: 治愈外壳
+          - generic [ref=e115]: 稳定内核
+          - generic [ref=e116]: 低阴影贴纸
+  - contentinfo [ref=e117]:
+    - generic [ref=e118]: 2026 © HoshinoStarry
+    - generic [ref=e119]: 除有特别声明，本站部分内容使用生成式人工智能生成
