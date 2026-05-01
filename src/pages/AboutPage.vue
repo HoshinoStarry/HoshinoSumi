@@ -82,7 +82,6 @@ import { character, designNotes, profile, profileStory, visualKeywords } from ".
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  /* min-height: clamp(25rem, 36vw, 32rem); */
   margin-top: clamp(2rem, 5vw, 4rem);
   padding: clamp(1.4rem, 4vw, 3.5rem);
   border: 1px solid var(--line);
@@ -183,9 +182,13 @@ h3 {
 .profile-section {
   margin-top: clamp(2.5rem, 6vw, 4.6rem);
   padding: clamp(1.35rem, 3.5vw, 2.4rem);
+  border: 1px solid var(--line);
   border-radius: clamp(1.2rem, 2.5vw, 2rem);
-  background: #ffffff;
+  background: var(--panel);
   box-shadow: 0 10px 24px rgba(34, 56, 102, 0.04);
+  transition:
+    background 240ms ease,
+    border-color 240ms ease;
 }
 
 .profile-name {
@@ -277,7 +280,6 @@ h3 {
 }
 
 .profile-text {
-  /* max-width: 52rem; */
   margin-top: clamp(2.6rem, 6vw, 4.5rem);
 }
 
@@ -331,70 +333,41 @@ h3 {
   font-size: 0.92rem;
   font-weight: 900;
 }
-/* 
-@media (max-width: 820px) {
-  .about-hero {
-    min-height: 0;
-    margin-top: 1.25rem;
-    padding-bottom: 0;
-  }
-
-  .profile-grid,
-  .notes {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hero-copy {
-    width: 100%;
-  }
-
-  .portrait-visual {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    margin-top: 1rem;
-    transform: translateX(30%);
-  }
-
-  .portrait-visual img {
-    width: 70%;
-    max-height: none;
-  }
-}
 
 @media (max-width: 620px) {
   .about-hero {
-    flex-direction: column;
-    gap: 0;
-    min-height: 0;
-    padding-bottom: 0;
-    overflow: visible;
+    padding: 1.25rem;
   }
 
   .hero-copy {
-    width: 100%;
+    width: min(100%, calc(100% - clamp(9rem, 38vw, 12.5rem)));
+    max-width: 18rem;
+  }
+
+  .portrait-visual {
+    right: 0.8rem;
+    width: clamp(9rem, 39vw, 12.25rem);
+    transform: none;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: clamp(2.45rem, 11vw, 3rem);
   }
 
   h2 {
     font-size: 2.25rem;
   }
 
+  .profile-roman {
+    font-size: clamp(1.05rem, 5.2vw, 1.45rem);
+  }
+
+  .profile-line {
+    font-size: clamp(0.98rem, 4.6vw, 1.12rem);
+  }
+
   .summary {
     font-size: 0.95rem;
-  }
-
-  .portrait-visual {
-    min-height: 0;
-  }
-
-  .portrait-visual img {
-    height: auto;
-    object-position: center bottom;
   }
 
   .section {
@@ -446,5 +419,5 @@ h3 {
   .story-band blockquote {
     font-size: 1.35rem;
   }
-} */
+}
 </style>

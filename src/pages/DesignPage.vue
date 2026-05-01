@@ -267,38 +267,15 @@ h3 {
   font-weight: 900;
 }
 
-/* @media (max-width: 1100px) {
+@media (max-width: 1100px) {
   .color-row {
     grid-template-columns: 5rem 1fr 1fr;
   }
 }
 
 @media (max-width: 820px) {
-  .design-hero {
-    min-height: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 0;
-  }
-
   .hero-copy {
     width: 100%;
-  }
-
-  .design-banner {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    margin-top: 1rem;
-    transform: translateY(5%) translateX(30%);
-  }
-
-  .design-banner img {
-    width: 70%;
-    max-height: none;
-    height: auto;
-    object-fit: contain;
   }
 
   .guide-grid {
@@ -313,5 +290,5 @@ h3 {
     grid-template-columns: 1fr;
     gap: 0.45rem;
   }
-} */
+}
 </style>

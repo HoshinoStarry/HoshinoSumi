@@ -104,7 +104,7 @@ watch([themeMode, systemDark], () => {
   top: 1rem;
   z-index: 30;
   display: flex;
-  width: min(28rem, calc(100% - 2rem));
+  width: max-content;
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
@@ -118,9 +118,9 @@ watch([themeMode, systemDark], () => {
   gap: 0.35rem;
   flex: 1 1 auto;
   min-height: 4.5rem;
-  padding: 0.75rem;
+  padding: 1rem 1.25rem;
   border: 1px solid var(--line);
-  border-radius: 2.25rem;
+  border-radius: 3rem;
   background: var(--nav-panel);
   box-shadow: var(--soft-shadow);
   backdrop-filter: blur(5px);
@@ -168,9 +168,16 @@ watch([themeMode, systemDark], () => {
     background 150ms ease;
 }
 
-.nav-links a:hover,
 .nav-links a.router-link-active {
   color: var(--active-text);
+  background: var(--active-bg);
+}
+
+.nav-links a:hover {
+  background: var(--nav-hover-bg);
+}
+
+.nav-links a.router-link-active:hover {
   background: var(--active-bg);
 }
 

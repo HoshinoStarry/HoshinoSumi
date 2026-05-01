@@ -26,6 +26,7 @@
   --nav-text: #222b42;
   --active-bg: var(--blue-strong);
   --active-text: #ffffff;
+  --nav-hover-bg: rgba(95, 158, 234, 0.3);
   --theme-toggle-bg: var(--blue-strong);
   --theme-toggle-text: #ffffff;
   --theme-toggle-border: var(--line);
@@ -66,6 +67,7 @@
     --nav-text: #dbe8ff;
     --active-bg: var(--blue-strong);
     --active-text: #07101f;
+    --nav-hover-bg: rgba(129, 184, 255, 0.3);
     --theme-toggle-bg: var(--blue-strong);
     --theme-toggle-text: #07101f;
     --theme-toggle-border: rgba(129, 184, 255, 0.56);
@@ -106,6 +108,7 @@
   --nav-text: #dbe8ff;
   --active-bg: var(--blue-strong);
   --active-text: #07101f;
+  --nav-hover-bg: rgba(129, 184, 255, 0.3);
   --theme-toggle-bg: var(--blue-strong);
   --theme-toggle-text: #07101f;
   --theme-toggle-border: rgba(129, 184, 255, 0.56);

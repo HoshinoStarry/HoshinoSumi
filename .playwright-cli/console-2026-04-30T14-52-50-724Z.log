@@ -28,3 +28,7 @@
 [46715331ms] [ERROR] [hmr] Failed to reload /src/pages/AboutPage.vue. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5174/@vite/client:175
 [46721959ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5174/src/pages/AboutPage.vue?t=1777607492668:0
 [46721960ms] [ERROR] [hmr] Failed to reload /src/pages/AboutPage.vue. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5174/@vite/client:175
+[49269939ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5174/src/pages/AboutPage.vue?t=1777610040650&vue&type=style&index=0&scoped=71767a1a&lang.css:0
+[49269942ms] [ERROR] [hmr] Failed to reload /src/pages/AboutPage.vue?vue&type=style&index=0&scoped=71767a1a&lang.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5174/@vite/client:175
+[49271373ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5174/src/pages/AboutPage.vue?t=1777610042086&vue&type=style&index=0&scoped=71767a1a&lang.css:0
+[49271375ms] [ERROR] [hmr] Failed to reload /src/pages/AboutPage.vue?vue&type=style&index=0&scoped=71767a1a&lang.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5174/@vite/client:175
