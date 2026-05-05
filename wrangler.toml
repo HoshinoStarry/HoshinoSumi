@@ -1,0 +1,11 @@
+name = "hoshino-sumi"
+compatibility_date = "2026-05-05"
+workers_dev = false
+
+[[routes]]
+pattern = "sumi.hoshino.host"
+custom_domain = true
+
+[assets]
+directory = "./dist/"
+not_found_handling = "single-page-application"

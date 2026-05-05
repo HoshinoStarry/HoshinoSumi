@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "run_dir": "C:\\Users\\HoshinoStarry\\Documents\\New project\\output\\hatch-pet-sumi",
+  "spritesheet": "C:\\Users\\HoshinoStarry\\Documents\\New project\\output\\hatch-pet-sumi\\final\\spritesheet.webp",
+  "validation": "C:\\Users\\HoshinoStarry\\Documents\\New project\\output\\hatch-pet-sumi\\final\\validation.json",
+  "contact_sheet": "C:\\Users\\HoshinoStarry\\Documents\\New project\\output\\hatch-pet-sumi\\qa\\contact-sheet.png",
+  "review": "C:\\Users\\HoshinoStarry\\Documents\\New project\\output\\hatch-pet-sumi\\qa\\review.json",
+  "videos": "C:\\Users\\HoshinoStarry\\Documents\\New project\\output\\hatch-pet-sumi\\qa\\videos",
+  "package": "C:\\Users\\HoshinoStarry\\.codex\\pets\\sumi"
+}

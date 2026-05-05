@@ -1,0 +1,98 @@
+{
+  "source": "assets/sumi-upper-body-final.png",
+  "canvas": {
+    "width": 434,
+    "height": 624
+  },
+  "alignment": "All full-size PNG files share the source canvas and should be stacked at x=0, y=0.",
+  "parts": [
+    {
+      "id": "head",
+      "file": "head.png",
+      "crop": "head-crop.png",
+      "bbox": [
+        143,
+        149,
+        294,
+        371
+      ]
+    },
+    {
+      "id": "nose",
+      "file": "nose.png",
+      "crop": "nose-crop.png",
+      "bbox": [
+        209,
+        227,
+        227,
+        249
+      ]
+    },
+    {
+      "id": "eyes",
+      "file": "eyes.png",
+      "crop": "eyes-crop.png",
+      "bbox": [
+        155,
+        196,
+        282,
+        238
+      ]
+    },
+    {
+      "id": "ears",
+      "file": "ears.png",
+      "crop": "ears-crop.png",
+      "bbox": [
+        141,
+        193,
+        299,
+        253
+      ]
+    },
+    {
+      "id": "mouth",
+      "file": "mouth.png",
+      "crop": "mouth-crop.png",
+      "bbox": [
+        206,
+        265,
+        229,
+        279
+      ]
+    },
+    {
+      "id": "hair",
+      "file": "hair.png",
+      "crop": "hair-crop.png",
+      "bbox": [
+        140,
+        44,
+        388,
+        319
+      ]
+    },
+    {
+      "id": "headwear",
+      "file": "headwear.png",
+      "crop": "headwear-crop.png",
+      "bbox": [
+        143,
+        46,
+        424,
+        181
+      ]
+    },
+    {
+      "id": "clothes",
+      "file": "clothes.png",
+      "crop": "clothes-crop.png",
+      "bbox": [
+        87,
+        295,
+        429,
+        624
+      ]
+    }
+  ]
+}

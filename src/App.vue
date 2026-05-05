@@ -1,16 +1,37 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
-import { RouterLink, RouterView } from "vue-router";
-import { character } from "./data";
+import { RouterLink, RouterView, useRoute } from "vue-router";
 
+const route = useRoute();
 const menuOpen = ref(false);
 const themeMode = ref(null);
 const systemDark = ref(false);
+const navHidden = ref(false);
+const pageTransitionName = ref("page-forward");
 const themeModes = ["light", "dark"];
 const currentYear = new Date().getFullYear();
 const githubUrl = "https://github.com/HoshinoStarry/HoshinoSumi";
+const navItems = [
+  {
+    label: "贴纸",
+    to: "/stickers",
+    isActive: (path) => path.startsWith("/stickers"),
+  },
+  {
+    label: "关于",
+    to: "/",
+    isActive: (path) => path === "/",
+  },
+  {
+    label: "设计",
+    to: "/design",
+    isActive: (path) => path.startsWith("/design") || path.startsWith("/palette"),
+  },
+];
 
 let mediaQuery;
+let lastScrollY = 0;
+let scrollFrame = null;
 
 const closeMenu = () => {
   menuOpen.value = false;
@@ -22,6 +43,10 @@ const themeLabel = computed(() => {
 });
 
 const resolvedTheme = computed(() => themeMode.value ?? (systemDark.value ? "dark" : "light"));
+const activeNavIndex = computed(() => {
+  const matchedIndex = navItems.findIndex((item) => item.isActive(route.path));
+  return matchedIndex === -1 ? 0 : matchedIndex;
+});
 
 const applyTheme = () => {
   document.documentElement.dataset.theme = resolvedTheme.value;
@@ -43,15 +68,37 @@ const cycleTheme = () => {
   themeMode.value = nextTheme;
 };
 
+const syncNavVisibility = () => {
+  if (scrollFrame !== null) return;
+
+  scrollFrame = window.requestAnimationFrame(() => {
+    const currentScrollY = Math.max(window.scrollY, 0);
+    const scrollDelta = currentScrollY - lastScrollY;
+
+    if (currentScrollY < 40) {
+      navHidden.value = false;
+    } else if (scrollDelta > 8) {
+      navHidden.value = true;
+    } else if (scrollDelta < -8) {
+      navHidden.value = false;
+    }
+
+    lastScrollY = currentScrollY;
+    scrollFrame = null;
+  });
+};
+
 onMounted(() => {
   mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
   systemDark.value = mediaQuery.matches;
+  lastScrollY = Math.max(window.scrollY, 0);
 
   const syncSystemTheme = (event) => {
     systemDark.value = event.matches;
   };
 
   mediaQuery.addEventListener("change", syncSystemTheme);
+  window.addEventListener("scroll", syncNavVisibility, { passive: true });
   mediaQuery._sumiSync = syncSystemTheme;
   applyTheme();
 });
@@ -60,20 +107,33 @@ onBeforeUnmount(() => {
   if (mediaQuery?._sumiSync) {
     mediaQuery.removeEventListener("change", mediaQuery._sumiSync);
   }
+
+  window.removeEventListener("scroll", syncNavVisibility);
+
+  if (scrollFrame !== null) {
+    window.cancelAnimationFrame(scrollFrame);
+  }
 });
 
 watch([themeMode, systemDark], () => {
   applyTheme();
 });
+
+watch(
+  activeNavIndex,
+  (nextIndex, previousIndex) => {
+    if (previousIndex === undefined || nextIndex === previousIndex) return;
+    pageTransitionName.value = nextIndex > previousIndex ? "page-forward" : "page-back";
+  },
+  { flush: "sync" },
+);
 </script>
 
 <template>
-  <header class="site-nav">
+  <header class="site-nav" :class="{ 'is-hidden': navHidden }">
     <div class="nav-shell">
-      <nav class="nav-links" aria-label="页面导航">
-        <RouterLink to="/stickers">贴纸</RouterLink>
-        <RouterLink to="/">关于</RouterLink>
-        <RouterLink to="/design">设计</RouterLink>
+      <nav class="nav-links" aria-label="页面导航" :style="{ '--active-index': activeNavIndex, '--nav-count': navItems.length }">
+        <RouterLink v-for="item in navItems" :key="item.to" :to="item.to">{{ item.label }}</RouterLink>
       </nav>
     </div>
     <button class="theme-toggle" type="button" :aria-label="`切换主题，当前为${themeLabel}`" :title="themeLabel" @click="cycleTheme">
@@ -88,7 +148,7 @@ watch([themeMode, systemDark], () => {
   </header>
 
   <RouterView v-slot="{ Component, route }">
-    <Transition name="page-fade" mode="out-in" appear>
+    <Transition :name="pageTransitionName" mode="out-in" appear>
       <component :is="Component" :key="route.fullPath" />
     </Transition>
   </RouterView>
@@ -121,6 +181,17 @@ watch([themeMode, systemDark], () => {
   justify-content: center;
   gap: 0.55rem;
   margin: 1rem auto 0;
+  opacity: 1;
+  transition:
+    opacity 180ms ease,
+    top 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-nav.is-hidden {
+  top: -6rem;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .nav-shell {
@@ -163,10 +234,32 @@ watch([themeMode, systemDark], () => {
 }
 
 .nav-links {
-  gap: 0.2rem;
+  position: relative;
+  display: grid;
+  width: 100%;
+  --nav-gap: 0.2rem;
+  grid-template-columns: repeat(var(--nav-count), minmax(0, 1fr));
+  gap: var(--nav-gap);
+  isolation: isolate;
+}
+
+.nav-links::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 0;
+  width: calc((100% + var(--nav-gap)) / var(--nav-count) - var(--nav-gap));
+  border-radius: 999px;
+  background: var(--active-bg);
+  content: "";
+  transform: translateX(calc(var(--active-index) * (100% + var(--nav-gap))));
+  transition:
+    background 150ms ease,
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-links a {
+  position: relative;
+  z-index: 1;
   display: grid;
   min-height: 2.6rem;
   place-items: center;
@@ -182,7 +275,7 @@ watch([themeMode, systemDark], () => {
 
 .nav-links a.router-link-active {
   color: var(--active-text);
-  background: var(--active-bg);
+  background: transparent;
 }
 
 .nav-links a:hover {
@@ -190,11 +283,12 @@ watch([themeMode, systemDark], () => {
 }
 
 .nav-links a.router-link-active:hover {
-  background: var(--active-bg);
+  background: transparent;
 }
 
 .theme-toggle {
   display: grid;
+  flex: 0 0 auto;
   width: 4.5rem;
   min-height: 4.5rem;
   padding: 0.75rem;
@@ -325,31 +419,55 @@ watch([themeMode, systemDark], () => {
   color: var(--blue-strong);
 }
 
-.page-fade-enter-active,
-.page-fade-leave-active {
+.page-forward-enter-active,
+.page-forward-leave-active,
+.page-back-enter-active,
+.page-back-leave-active {
   transition:
     opacity 260ms ease,
     transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.page-fade-enter-from {
+.page-forward-enter-from {
   opacity: 0;
   transform: translateX(1.6rem);
 }
 
-.page-fade-leave-to {
+.page-forward-leave-to {
   opacity: 0;
   transform: translateX(-1.2rem);
 }
 
+.page-back-enter-from {
+  opacity: 0;
+  transform: translateX(-1.6rem);
+}
+
+.page-back-leave-to {
+  opacity: 0;
+  transform: translateX(1.2rem);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .page-fade-enter-active,
-  .page-fade-leave-active {
+  .site-nav {
+    transition: none;
+  }
+
+  .nav-links::before {
+    transition: none;
+  }
+
+  .page-forward-enter-active,
+  .page-forward-leave-active,
+  .page-back-enter-active,
+  .page-back-leave-active {
     transition: opacity 1ms linear;
   }
 
-  .page-fade-enter-from,
-  .page-fade-leave-to {
+  .page-forward-enter-from,
+  .page-forward-leave-to,
+  .page-back-enter-from,
+  .page-back-leave-to {
     transform: none;
   }
 }
@@ -367,38 +485,66 @@ watch([themeMode, systemDark], () => {
   }
 }
 
-/* @media (max-width: 820px) {
+@media (max-width: 820px) {
   .site-nav {
-    width: min(100% - 1rem, 54rem);
+    position: fixed;
+    top: auto;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    left: 50%;
+    width: min(100% - 1rem, 34rem);
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .site-nav.is-hidden {
+    top: auto;
+    opacity: 0;
+    transform: translateX(-50%) translateY(calc(100% + 1.5rem));
   }
 
   .nav-shell {
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border-radius: 1.75rem;
-  }
-
-  .menu-button {
-    display: grid;
-  }
-
-  .nav-links {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    padding: 0.6rem 0.2rem 0.15rem;
-    border-top: 1px solid transparent;
-  }
-
-  .is-open .nav-links {
-    display: flex;
-    border-color: var(--line);
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 3.9rem;
+    padding: 0.55rem 0.65rem;
+    border-radius: 2rem;
   }
 
   .nav-links a {
-    width: 100%;
-    min-height: 3.25rem;
-    font-size: 1.1rem;
+    min-height: 2.8rem;
+    padding: 0 0.25rem;
+    font-size: 0.92rem;
   }
-} */
+
+  .theme-toggle {
+    width: 3.9rem;
+    min-height: 3.9rem;
+    padding: 0.65rem;
+  }
+
+  .theme-toggle svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-nav {
+    gap: 0.35rem;
+  }
+
+  .nav-shell {
+    padding: 0.5rem;
+  }
+
+  .nav-links a {
+    padding: 0 0.15rem;
+    font-size: 0.86rem;
+  }
+
+  .theme-toggle {
+    width: 3.65rem;
+    min-height: 3.65rem;
+  }
+}
 </style>

@@ -40,6 +40,8 @@
   --success: #24724a;
   --danger: #9b3244;
   --soft-shadow: 0 14px 34px rgba(34, 56, 102, 0.08);
+  --section-padding: clamp(1.35rem, 3.5vw, 2.4rem);
+  --section-padding-mobile: 1rem;
   --page-bg:
     radial-gradient(circle at 16% 8%, rgba(255, 231, 154, 0.34), transparent 20rem),
     radial-gradient(circle at 86% 20%, rgba(142, 199, 255, 0.35), transparent 26rem),
@@ -208,6 +210,10 @@ main {
 }
 
 @media (max-width: 820px) {
+  body {
+    padding-bottom: calc(5.75rem + env(safe-area-inset-bottom));
+  }
+
   main {
     width: min(100% - 1rem, 1180px);
   }

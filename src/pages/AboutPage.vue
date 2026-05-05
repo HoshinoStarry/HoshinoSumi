@@ -1,27 +1,29 @@
 <script setup>
+import AppSection from "../components/AppSection.vue";
+import PageBanner from "../components/PageBanner.vue";
 import { character, designNotes, profile, profileStory, visualKeywords } from "../data";
 </script>
 
 <template>
   <main class="page about-page">
-    <div class="about-section-outer">
-      <section class="about-hero">
-        <div class="hero-copy">
-          <p class="eyebrow">About</p>
-          <h1>{{ character.name }}</h1>
-          <!-- <p class="summary">{{ character.about }}</p> -->
-          <p class="profile-roman">{{ character.roman }}</p>
-          <p class="profile-line">{{ character.tagline }}</p>
-        </div>
+    <PageBanner
+      class="about-banner"
+      image-src="/assets/character-transparent.png"
+      :image-alt="`${character.name} 角色主视觉`"
+      outer-margin-top="clamp(1rem, 15vw, 22rem)"
+      visual-width="min(34rem, 38vw)"
+      visual-transform="translateX(12%)"
+    >
+      <template #copy>
+        <p class="eyebrow">About</p>
+        <h1>{{ character.name }}</h1>
+        <p class="banner-roman">{{ character.roman }}</p>
+        <p class="banner-line">{{ character.tagline }}</p>
+      </template>
+    </PageBanner>
 
-        <figure class="turnaround portrait-visual">
-          <img src="/assets/character-transparent.png" :alt="`${character.name} 角色主视觉`" />
-        </figure>
-      </section>
-    </div>
 
-
-    <section class="profile-section">
+    <AppSection class="profile-section" spacing="loose" radius="soft" margin-top-mobile="2.2rem">
       <p class="eyebrow">Profile</p>
       <div class="profile-grid" aria-label="人物资料">
         <article v-for="item in profile" :key="item[0]" class="info-card">
@@ -39,66 +41,13 @@ import { character, designNotes, profile, profileStory, visualKeywords } from ".
           <p v-for="paragraph in profileStory" :key="paragraph">{{ paragraph }}</p>
         </div>
       </div>
-    </section>
-    <!-- 
-    <section class="story-band">
-      <p class="eyebrow">Core</p>
-      <blockquote>
-        {{ character.tagline }}
-      </blockquote>
-    </section>
-
-    <section class="section two-column">
-      <div class="section-title">
-        <p class="eyebrow">Design</p>
-        <h2>造型记忆点</h2>
-      </div>
-      <div class="notes">
-        <article v-for="[title, text] in designNotes" :key="title" class="note">
-          <h3>{{ title }}</h3>
-          <p>{{ text }}</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="keyword-cloud" aria-label="角色关键词">
-      <span v-for="keyword in visualKeywords" :key="keyword">{{ keyword }}</span>
-    </section> -->
+    </AppSection>
   </main>
 </template>
 
 <style scoped>
 .page {
   padding-bottom: clamp(3rem, 7vw, 5rem);
-}
-
-.about-section-outer {
-  margin-top: clamp(1rem, 15vw, 22rem);
-}
-
-.about-hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-top: clamp(2rem, 5vw, 4rem);
-  padding: clamp(1.4rem, 4vw, 3.5rem);
-  border: 1px solid var(--line);
-  border-radius: clamp(1.5rem, 3vw, 2.6rem);
-  background: var(--panel);
-  box-shadow: 0 10px 24px rgba(34, 56, 102, 0.04);
-  overflow: visible;
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  width: min(36rem, 44%);
-  min-width: 0;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 .eyebrow {
@@ -118,6 +67,22 @@ h1 {
   font-weight: 900;
 }
 
+.banner-roman {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.45rem, 3.4vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.banner-line {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.7;
+}
+
 h2 {
   margin: 0;
   color: var(--navy);
@@ -133,86 +98,10 @@ h3 {
   font-weight: 900;
 }
 
-.summary {
-  max-width: 36rem;
-  margin: 1rem 0 0;
-  color: var(--summary);
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
-  line-height: 1.8;
-}
-
-.turnaround {
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.turnaround img {
-  display: block;
-  object-fit: contain;
-}
-
-.portrait-visual {
-  position: absolute;
-  right: clamp(2rem, 5vw, 4rem);
-  bottom: 0;
-  z-index: 3;
-  width: min(34rem, 38vw);
-  background: transparent;
-  pointer-events: none;
-  transform: translateX(12%);
-}
-
-.portrait-visual img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  object-position: center bottom;
-}
-
-.section {
-  padding-top: clamp(2.5rem, 6vw, 4.6rem);
-}
-
 .profile-section {
-  margin-top: clamp(2.5rem, 6vw, 4.6rem);
-  padding: clamp(1.35rem, 3.5vw, 2.4rem);
-  border: 1px solid var(--line);
-  border-radius: clamp(1.2rem, 2.5vw, 2rem);
-  background: var(--panel);
-  box-shadow: 0 10px 24px rgba(34, 56, 102, 0.04);
   transition:
     background 240ms ease,
     border-color 240ms ease;
-}
-
-.profile-name {
-  margin: 0;
-  color: var(--navy);
-  font-size: clamp(2.4rem, 5.4vw, 4rem);
-  font-weight: 900;
-  line-height: 1;
-}
-
-.profile-roman {
-  margin: 0;
-  color: var(--muted);
-  font-size: clamp(1.45rem, 3.4vw, 2.4rem);
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.profile-line {
-  margin: 0.7rem 0 0;
-  color: var(--muted);
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  line-height: 1.7;
 }
 
 .section-title {
@@ -297,15 +186,6 @@ h3 {
   line-height: 1.9;
 }
 
-.story-band {
-  margin-top: clamp(2.5rem, 6vw, 4.6rem);
-  padding: clamp(1.3rem, 4vw, 2rem);
-  border: 1px solid var(--line);
-  border-radius: 1.6rem;
-  background: var(--deep-panel);
-  box-shadow: 0 10px 24px rgba(34, 56, 102, 0.04);
-}
-
 .story-band .eyebrow {
   color: var(--gold);
 }
@@ -335,48 +215,20 @@ h3 {
 }
 
 @media (max-width: 620px) {
-  .about-hero {
-    padding: 1.25rem;
-  }
-
-  .hero-copy {
-    width: min(100%, calc(100% - clamp(9rem, 38vw, 12.5rem)));
-    max-width: 18rem;
-  }
-
-  .portrait-visual {
-    right: 0.8rem;
-    width: clamp(9rem, 39vw, 12.25rem);
-    transform: none;
-  }
-
   h1 {
     font-size: clamp(2.45rem, 11vw, 3rem);
   }
 
-  h2 {
-    font-size: 2.25rem;
-  }
-
-  .profile-roman {
+  .banner-roman {
     font-size: clamp(1.05rem, 5.2vw, 1.45rem);
   }
 
-  .profile-line {
+  .banner-line {
     font-size: clamp(0.98rem, 4.6vw, 1.12rem);
   }
 
-  .summary {
-    font-size: 0.95rem;
-  }
-
-  .section {
-    padding-top: 2.2rem;
-  }
-
-  .profile-section {
-    margin-top: 2.2rem;
-    padding: 1rem;
+  h2 {
+    font-size: 2.25rem;
   }
 
   .profile-heading {

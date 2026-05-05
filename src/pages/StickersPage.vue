@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from "vue";
+import AppSection from "../components/AppSection.vue";
+import PageBanner from "../components/PageBanner.vue";
 import { character, stickers } from "../data";
-
-const bannerVisible = ref(true);
 const statusById = ref({});
 
 const copySticker = async (sticker) => {
@@ -31,44 +31,28 @@ const copySticker = async (sticker) => {
 
 <template>
   <main class="home-page">
-    <div class="hero-section-outer">
-      <section class="hero-section">
-        <div class="hero-copy">
-          <p class="eyebrow">Stickers</p>
-          <h1>贴纸</h1>
-          <div class="cta-group">
-            <a href="https://t.me/addstickers/hoshino_sumi_1_by_hsnsty_slavebot" target="_blank" class="tg-button">
-              <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-              </svg>
-              添加到 Telegram
-            </a>
-          </div>
+    <PageBanner
+      class="stickers-banner"
+      image-src="/assets/sumi-banner.png"
+      :image-alt="`${character.name} 贴纸横幅`"
+      visual-transform="translateY(6.9%) translateX(5%)"
+      visual-transform-mobile="translateY(6.9%) translateX(-5%)"
+    >
+      <template #copy>
+        <p class="eyebrow">Stickers</p>
+        <h1>贴纸</h1>
+        <div class="cta-group">
+          <a href="https://t.me/addstickers/hoshino_sumi_1_by_hsnsty_slavebot" target="_blank" class="tg-button">
+            <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            添加到 Telegram
+          </a>
         </div>
+      </template>
+    </PageBanner>
 
-        <figure class="banner-slot" :class="{ 'is-empty': !bannerVisible }">
-          <img v-if="bannerVisible" src="/assets/sumi-banner.png" :alt="`${character.name} 贴纸横幅`"
-            @error="bannerVisible = false" />
-        </figure>
-      </section>
-    </div>
-
-    <!-- <section class="stats" aria-label="贴纸统计">
-      <article>
-        <strong>{{ stickers.length }}</strong>
-        <span>张透明 PNG</span>
-      </article>
-      <article>
-        <strong>Emoji</strong>
-        <span>情绪标签</span>
-      </article>
-      <article>
-        <strong>Click</strong>
-        <span>点击复制</span>
-      </article>
-    </section> -->
-
-    <section class="sticker-section" aria-label="贴纸列表">
+    <AppSection class="sticker-section" aria-label="贴纸列表">
       <div v-for="sticker in stickers" :key="sticker.id" class="sticker-wrapper">
         <button class="sticker-card" type="button" :data-state="statusById[sticker.id]"
           :aria-label="`复制${sticker.name}`" @click="copySticker(sticker)">
@@ -81,7 +65,7 @@ const copySticker = async (sticker) => {
         </button>
         <span class="card-offset" aria-hidden="true"></span>
       </div>
-    </section>
+    </AppSection>
   </main>
 </template>
 
@@ -89,31 +73,6 @@ const copySticker = async (sticker) => {
 .home-page {
   padding-bottom: clamp(3rem, 6vw, 5rem);
   overflow-x: clip;
-}
-
-.hero-section-outer {
-  margin-top: clamp(1rem, 12vw, 22rem);
-}
-
-.hero-section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: clamp(1.4rem, 4vw, 3.5rem);
-  border: 1px solid var(--line);
-  border-radius: clamp(1.5rem, 3vw, 2.6rem);
-  background: var(--panel);
-  box-shadow: 0 10px 24px rgba(34, 56, 102, 0.04);
-  overflow: visible;
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 1;
-  width: min(36rem, 44%);
-  min-width: 0;
 }
 
 .eyebrow {
@@ -164,35 +123,6 @@ h1 {
   height: 1.4rem;
 }
 
-.summary {
-  max-width: 34rem;
-  margin: 1.2rem 0 0;
-  color: var(--summary);
-  font-size: clamp(1.02rem, 1.35vw, 1.28rem);
-  line-height: 1.8;
-}
-
-.banner-slot {
-  position: absolute;
-  right: clamp(2rem, 5vw, 4rem);
-  bottom: 0;
-  z-index: 3;
-  display: block;
-  width: min(38rem, 42vw);
-  margin: 0;
-  background: transparent;
-  pointer-events: none;
-  transform: translateY(6.9%) translateX(5%);
-}
-
-.banner-slot img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
 .stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -227,12 +157,6 @@ h1 {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(0.8rem, 1.6vw, 1.15rem);
-  margin-top: clamp(1.2rem, 4vw, 2.5rem);
-  padding: clamp(1rem, 2.5vw, 1.8rem);
-  border: 1px solid var(--line);
-  border-radius: clamp(1.5rem, 3vw, 2.4rem);
-  background: var(--panel);
-  box-shadow: 0 10px 24px rgba(34, 56, 102, 0.04);
 }
 
 .sticker-wrapper {
@@ -366,37 +290,18 @@ h1 {
 }
 
 @media (max-width: 820px) {
-  /* .hero-section {
-    min-height: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 0;
-  }
-
-  .hero-copy {
-    width: 100%;
-  }
-
-  .banner-slot {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    margin-top: 1rem;
-    transform: translateY(6.9%) translateX(30%);
-  }
-
-  .banner-slot img {
-    width: 70%;
-    max-height: none;
-  } */
-
   .stats {
     grid-template-columns: 1fr;
   }
 
   .sticker-section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  h1 {
+    font-size: clamp(2.45rem, 11vw, 3rem);
   }
 }
 </style>

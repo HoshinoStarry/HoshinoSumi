@@ -1,23 +1,25 @@
 <script setup>
+import AppSection from "../components/AppSection.vue";
+import PageBanner from "../components/PageBanner.vue";
 import { palette, stickerRules, visualKeywords } from "../data";
 </script>
 
 <template>
   <main class="page design-page">
-    <div class="design-section-outer">
-      <section class="page-head design-hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Design</p>
-          <h1>设计</h1>
-        </div>
-        <figure class="design-banner" aria-hidden="true">
-          <img src="/assets/sumi-design-banner-cutout.png" alt="" />
-        </figure>
-      </section>
-    </div>
+    <PageBanner
+      class="design-banner"
+      image-src="/assets/sumi-design-banner-cutout.png"
+      copy-width-tablet="100%"
+      visual-transform-mobile="translateY(5%) translateX(-5%)"
+    >
+      <template #copy>
+        <p class="eyebrow">Design</p>
+        <h1>设计</h1>
+      </template>
+    </PageBanner>
 
 
-    <section class="section">
+    <AppSection class="section">
       <div class="section-title">
         <p class="eyebrow">Palette</p>
         <h2>人物色系配色表</h2>
@@ -34,9 +36,9 @@ import { palette, stickerRules, visualKeywords } from "../data";
           <p>{{ avoid }}</p>
         </article>
       </div>
-    </section>
+    </AppSection>
 
-    <section class="section guide-grid">
+    <AppSection class="section guide-grid">
       <div>
         <div class="section-title">
           <p class="eyebrow">Sticker Rules</p>
@@ -59,66 +61,13 @@ import { palette, stickerRules, visualKeywords } from "../data";
           <span v-for="keyword in visualKeywords" :key="keyword">{{ keyword }}</span>
         </div>
       </div>
-    </section>
+    </AppSection>
   </main>
 </template>
 
 <style scoped>
 .page {
   padding-bottom: clamp(3rem, 7vw, 5rem);
-}
-
-.design-section-outer {
-  margin-top: clamp(1rem, 12vw, 22rem);
-}
-
-.page-head {
-  position: relative;
-  margin-top: clamp(2rem, 5vw, 4rem);
-  padding: clamp(1.4rem, 4vw, 3.5rem);
-  border: 1px solid var(--line);
-  border-radius: clamp(1.5rem, 3vw, 2.6rem);
-  background: var(--panel);
-  box-shadow: 0 10px 24px rgba(34, 56, 102, 0.04);
-  overflow: hidden;
-}
-
-.design-hero {
-  display: flex;
-  /* min-height: clamp(25rem, 36vw, 32rem); */
-  padding: clamp(1.4rem, 4vw, 3.5rem);
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  overflow: visible;
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 2;
-  width: min(36rem, 44%);
-  min-width: 0;
-}
-
-.design-banner {
-  position: absolute;
-  right: clamp(2rem, 5vw, 4rem);
-  bottom: 0;
-  z-index: 3;
-  display: block;
-  width: min(38rem, 42vw);
-  margin: 0;
-  background: transparent;
-  pointer-events: none;
-  transform: translateY(5%) translateX(5%);
-}
-
-.design-banner img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
 }
 
 .eyebrow {
@@ -159,15 +108,6 @@ h3 {
   color: var(--summary);
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   line-height: 1.8;
-}
-
-.section {
-  margin-top: clamp(1.2rem, 4vw, 2.5rem);
-  padding: clamp(1.2rem, 3vw, 2rem);
-  border: 1px solid var(--line);
-  border-radius: clamp(1.5rem, 3vw, 2.4rem);
-  background: var(--panel);
-  box-shadow: 0 10px 24px rgba(34, 56, 102, 0.04);
 }
 
 .section-title {
@@ -274,10 +214,6 @@ h3 {
 }
 
 @media (max-width: 820px) {
-  .hero-copy {
-    width: 100%;
-  }
-
   .guide-grid {
     grid-template-columns: 1fr;
   }
@@ -289,6 +225,12 @@ h3 {
   .color-row {
     grid-template-columns: 1fr;
     gap: 0.45rem;
+  }
+}
+
+@media (max-width: 620px) {
+  h1 {
+    font-size: clamp(2.45rem, 11vw, 3rem);
   }
 }
 </style>
