@@ -2,13 +2,14 @@
 import AppSection from "../components/AppSection.vue";
 import PageBanner from "../components/PageBanner.vue";
 import { character, designNotes, profile, profileStory, visualKeywords } from "../data";
+import characterVisual from "../../assets/character-transparent.png";
 </script>
 
 <template>
   <main class="page about-page">
     <PageBanner
       class="about-banner"
-      image-src="/assets/character-transparent.png"
+      :image-src="characterVisual"
       :image-alt="`${character.name} 角色主视觉`"
       outer-margin-top="clamp(1rem, 15vw, 22rem)"
       visual-width="min(34rem, 38vw)"

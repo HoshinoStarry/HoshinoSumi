@@ -2,13 +2,14 @@
 import AppSection from "../components/AppSection.vue";
 import PageBanner from "../components/PageBanner.vue";
 import { palette, stickerRules, visualKeywords } from "../data";
+import designBanner from "../../assets/sumi-design-banner-cutout.png";
 </script>
 
 <template>
   <main class="page design-page">
     <PageBanner
       class="design-banner"
-      image-src="/assets/sumi-design-banner-cutout.png"
+      :image-src="designBanner"
       copy-width-tablet="100%"
       visual-transform-mobile="translateY(5%) translateX(-5%)"
     >

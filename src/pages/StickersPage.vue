@@ -3,6 +3,7 @@ import { ref } from "vue";
 import AppSection from "../components/AppSection.vue";
 import PageBanner from "../components/PageBanner.vue";
 import { character, stickers } from "../data";
+import stickersBanner from "../../assets/sumi-banner.png";
 const statusById = ref({});
 
 const copySticker = async (sticker) => {
@@ -33,7 +34,7 @@ const copySticker = async (sticker) => {
   <main class="home-page">
     <PageBanner
       class="stickers-banner"
-      image-src="/assets/sumi-banner.png"
+      :image-src="stickersBanner"
       :image-alt="`${character.name} 贴纸横幅`"
       visual-transform="translateY(6.9%) translateX(5%)"
       visual-transform-mobile="translateY(6.9%) translateX(-5%)"
