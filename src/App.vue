@@ -23,6 +23,11 @@ const navItems = [
     isActive: (path) => path === "/",
   },
   {
+    label: "互动",
+    to: "/live2d",
+    isActive: (path) => path.startsWith("/live2d"),
+  },
+  {
     label: "设计",
     to: "/design",
     isActive: (path) => path.startsWith("/design") || path.startsWith("/palette"),

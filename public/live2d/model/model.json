@@ -1,0 +1,1134 @@
+{
+  "name": "蓝发少女互动模型",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "format": "layered-2d-web-v1",
+  "source_psd": "蓝发少女_Live2D分层源文件.psd",
+  "bones": {
+    "root": {
+      "parent": null,
+      "pivot": [
+        512,
+        820
+      ],
+      "min": -5,
+      "max": 5
+    },
+    "torso": {
+      "parent": "root",
+      "pivot": [
+        512,
+        650
+      ],
+      "min": -10,
+      "max": 10
+    },
+    "pelvis": {
+      "parent": "torso",
+      "pivot": [
+        512,
+        754
+      ],
+      "min": -8,
+      "max": 8
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        512,
+        326
+      ],
+      "min": -18,
+      "max": 18
+    },
+    "hairBunL": {
+      "parent": "head",
+      "pivot": [
+        415,
+        82
+      ],
+      "min": -12,
+      "max": 12
+    },
+    "hairBunR": {
+      "parent": "head",
+      "pivot": [
+        609,
+        82
+      ],
+      "min": -12,
+      "max": 12
+    },
+    "hairSideL": {
+      "parent": "head",
+      "pivot": [
+        400,
+        178
+      ],
+      "min": -14,
+      "max": 14
+    },
+    "hairSideR": {
+      "parent": "head",
+      "pivot": [
+        624,
+        178
+      ],
+      "min": -14,
+      "max": 14
+    },
+    "upperArmL": {
+      "parent": "torso",
+      "pivot": [
+        405,
+        360
+      ],
+      "min": -65,
+      "max": 45
+    },
+    "forearmL": {
+      "parent": "upperArmL",
+      "pivot": [
+        369,
+        570
+      ],
+      "min": -85,
+      "max": 70
+    },
+    "handL": {
+      "parent": "forearmL",
+      "pivot": [
+        320,
+        785
+      ],
+      "min": -40,
+      "max": 40
+    },
+    "upperArmR": {
+      "parent": "torso",
+      "pivot": [
+        619,
+        360
+      ],
+      "min": -45,
+      "max": 65
+    },
+    "forearmR": {
+      "parent": "upperArmR",
+      "pivot": [
+        655,
+        570
+      ],
+      "min": -70,
+      "max": 85
+    },
+    "handR": {
+      "parent": "forearmR",
+      "pivot": [
+        704,
+        785
+      ],
+      "min": -40,
+      "max": 40
+    },
+    "thighL": {
+      "parent": "pelvis",
+      "pivot": [
+        457,
+        754
+      ],
+      "min": -30,
+      "max": 30
+    },
+    "calfL": {
+      "parent": "thighL",
+      "pivot": [
+        442,
+        1010
+      ],
+      "min": -15,
+      "max": 65
+    },
+    "footL": {
+      "parent": "calfL",
+      "pivot": [
+        428,
+        1370
+      ],
+      "min": -25,
+      "max": 25
+    },
+    "thighR": {
+      "parent": "pelvis",
+      "pivot": [
+        567,
+        754
+      ],
+      "min": -30,
+      "max": 30
+    },
+    "calfR": {
+      "parent": "thighR",
+      "pivot": [
+        582,
+        1010
+      ],
+      "min": -65,
+      "max": 15
+    },
+    "footR": {
+      "parent": "calfR",
+      "pivot": [
+        596,
+        1370
+      ],
+      "min": -25,
+      "max": 25
+    }
+  },
+  "parts": [
+    {
+      "id": "part_011",
+      "name": "左大腿",
+      "file": "/live2d/model/011_part_011.png",
+      "x": 381,
+      "y": 742,
+      "w": 130,
+      "h": 282,
+      "bone": "thighL",
+      "z": 12,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_014",
+      "name": "右大腿",
+      "file": "/live2d/model/014_part_014.png",
+      "x": 510,
+      "y": 742,
+      "w": 127,
+      "h": 282,
+      "bone": "thighR",
+      "z": 12,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_012",
+      "name": "左小腿",
+      "file": "/live2d/model/012_part_012.png",
+      "x": 388,
+      "y": 984,
+      "w": 83,
+      "h": 407,
+      "bone": "calfL",
+      "z": 13,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_015",
+      "name": "右小腿",
+      "file": "/live2d/model/015_part_015.png",
+      "x": 549,
+      "y": 984,
+      "w": 82,
+      "h": 407,
+      "bone": "calfR",
+      "z": 13,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_013",
+      "name": "左脚",
+      "file": "/live2d/model/013_part_013.png",
+      "x": 389,
+      "y": 1340,
+      "w": 60,
+      "h": 120,
+      "bone": "footL",
+      "z": 14,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_016",
+      "name": "右脚",
+      "file": "/live2d/model/016_part_016.png",
+      "x": 567,
+      "y": 1340,
+      "w": 58,
+      "h": 120,
+      "bone": "footR",
+      "z": 14,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_002",
+      "name": "躯干内搭",
+      "file": "/live2d/model/002_part_002.png",
+      "x": 388,
+      "y": 320,
+      "w": 247,
+      "h": 457,
+      "bone": "torso",
+      "z": 20,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_001",
+      "name": "安全裤隐藏底色补齐",
+      "file": "/live2d/model/001_part_001.png",
+      "x": 382,
+      "y": 632,
+      "w": 259,
+      "h": 139,
+      "bone": "pelvis",
+      "z": 22,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_003",
+      "name": "运动背心",
+      "file": "/live2d/model/003_part_003.png",
+      "x": 417,
+      "y": 335,
+      "w": 192,
+      "h": 233,
+      "bone": "torso",
+      "z": 23,
+      "toggle": "inner",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_004",
+      "name": "安全裤",
+      "file": "/live2d/model/004_part_004.png",
+      "x": 382,
+      "y": 620,
+      "w": 259,
+      "h": 162,
+      "bone": "pelvis",
+      "z": 24,
+      "toggle": "inner",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_005",
+      "name": "左上臂",
+      "file": "/live2d/model/005_part_005.png",
+      "x": 355,
+      "y": 340,
+      "w": 95,
+      "h": 254,
+      "bone": "upperArmL",
+      "z": 25,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_008",
+      "name": "右上臂",
+      "file": "/live2d/model/008_part_008.png",
+      "x": 575,
+      "y": 341,
+      "w": 92,
+      "h": 251,
+      "bone": "upperArmR",
+      "z": 25,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_006",
+      "name": "左前臂",
+      "file": "/live2d/model/006_part_006.png",
+      "x": 300,
+      "y": 532,
+      "w": 118,
+      "h": 271,
+      "bone": "forearmL",
+      "z": 26,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_009",
+      "name": "右前臂",
+      "file": "/live2d/model/009_part_009.png",
+      "x": 610,
+      "y": 532,
+      "w": 111,
+      "h": 263,
+      "bone": "forearmR",
+      "z": 26,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_043",
+      "name": "兜帽",
+      "file": "/live2d/model/043_part_043.png",
+      "x": 377,
+      "y": 290,
+      "w": 274,
+      "h": 123,
+      "bone": "torso",
+      "z": 38,
+      "toggle": "hoodie",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_017",
+      "name": "后发主体",
+      "file": "/live2d/model/017_part_017.png",
+      "x": 360,
+      "y": 45,
+      "w": 313,
+      "h": 302,
+      "bone": "head",
+      "z": 40,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_018",
+      "name": "左丸子头",
+      "file": "/live2d/model/018_part_018.png",
+      "x": 383,
+      "y": 48,
+      "w": 74,
+      "h": 81,
+      "bone": "hairBunL",
+      "z": 41,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_019",
+      "name": "右丸子头",
+      "file": "/live2d/model/019_part_019.png",
+      "x": 568,
+      "y": 45,
+      "w": 74,
+      "h": 85,
+      "bone": "hairBunR",
+      "z": 41,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_020",
+      "name": "左后侧发",
+      "file": "/live2d/model/020_part_020.png",
+      "x": 367,
+      "y": 125,
+      "w": 65,
+      "h": 199,
+      "bone": "hairSideL",
+      "z": 42,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_021",
+      "name": "右后侧发",
+      "file": "/live2d/model/021_part_021.png",
+      "x": 596,
+      "y": 122,
+      "w": 69,
+      "h": 197,
+      "bone": "hairSideR",
+      "z": 42,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_023",
+      "name": "颈部",
+      "file": "/live2d/model/023_part_023.png",
+      "x": 445,
+      "y": 284,
+      "w": 136,
+      "h": 91,
+      "bone": "head",
+      "z": 45,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_022",
+      "name": "脸底色_含隐藏额头",
+      "file": "/live2d/model/022_part_022.png",
+      "x": 446,
+      "y": 134,
+      "w": 134,
+      "h": 184,
+      "bone": "head",
+      "z": 50,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_032",
+      "name": "左眉",
+      "file": "/live2d/model/032_part_032.png",
+      "x": 443,
+      "y": 181,
+      "w": 46,
+      "h": 11,
+      "bone": "head",
+      "z": 54,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_033",
+      "name": "右眉",
+      "file": "/live2d/model/033_part_033.png",
+      "x": 528,
+      "y": 181,
+      "w": 46,
+      "h": 11,
+      "bone": "head",
+      "z": 54,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_024",
+      "name": "左眼白",
+      "file": "/live2d/model/024_part_024.png",
+      "x": 445,
+      "y": 212,
+      "w": 51,
+      "h": 32,
+      "bone": "head",
+      "z": 55,
+      "toggle": null,
+      "feature": "eye-左-sclera",
+      "pivot": [
+        470,
+        226
+      ]
+    },
+    {
+      "id": "part_028",
+      "name": "右眼白",
+      "file": "/live2d/model/028_part_028.png",
+      "x": 527,
+      "y": 212,
+      "w": 51,
+      "h": 32,
+      "bone": "head",
+      "z": 55,
+      "toggle": null,
+      "feature": "eye-右-sclera",
+      "pivot": [
+        552,
+        226
+      ]
+    },
+    {
+      "id": "part_025",
+      "name": "左虹膜瞳孔",
+      "file": "/live2d/model/025_part_025.png",
+      "x": 458,
+      "y": 214,
+      "w": 25,
+      "h": 31,
+      "bone": "head",
+      "z": 56,
+      "toggle": null,
+      "feature": "eye-左-iris",
+      "pivot": [
+        470,
+        226
+      ]
+    },
+    {
+      "id": "part_029",
+      "name": "右虹膜瞳孔",
+      "file": "/live2d/model/029_part_029.png",
+      "x": 540,
+      "y": 214,
+      "w": 25,
+      "h": 31,
+      "bone": "head",
+      "z": 56,
+      "toggle": null,
+      "feature": "eye-右-iris",
+      "pivot": [
+        552,
+        226
+      ]
+    },
+    {
+      "id": "part_026",
+      "name": "左上睫毛",
+      "file": "/live2d/model/026_part_026.png",
+      "x": 439,
+      "y": 208,
+      "w": 59,
+      "h": 17,
+      "bone": "head",
+      "z": 57,
+      "toggle": null,
+      "feature": "eye-左-open",
+      "pivot": [
+        470,
+        226
+      ]
+    },
+    {
+      "id": "part_030",
+      "name": "右上睫毛",
+      "file": "/live2d/model/030_part_030.png",
+      "x": 521,
+      "y": 208,
+      "w": 59,
+      "h": 17,
+      "bone": "head",
+      "z": 57,
+      "toggle": null,
+      "feature": "eye-右-open",
+      "pivot": [
+        552,
+        226
+      ]
+    },
+    {
+      "id": "part_027",
+      "name": "左闭眼线",
+      "file": "/live2d/model/027_part_027.png",
+      "x": 445,
+      "y": 222,
+      "w": 51,
+      "h": 11,
+      "bone": "head",
+      "z": 58,
+      "toggle": null,
+      "feature": "eye-左-closed",
+      "pivot": [
+        470,
+        226
+      ]
+    },
+    {
+      "id": "part_031",
+      "name": "右闭眼线",
+      "file": "/live2d/model/031_part_031.png",
+      "x": 527,
+      "y": 222,
+      "w": 51,
+      "h": 11,
+      "bone": "head",
+      "z": 58,
+      "toggle": null,
+      "feature": "eye-右-closed",
+      "pivot": [
+        552,
+        226
+      ]
+    },
+    {
+      "id": "part_034",
+      "name": "闭嘴",
+      "file": "/live2d/model/034_part_034.png",
+      "x": 504,
+      "y": 280,
+      "w": 15,
+      "h": 4,
+      "bone": "head",
+      "z": 59,
+      "toggle": null,
+      "feature": "mouth-closed",
+      "pivot": [
+        511,
+        281
+      ]
+    },
+    {
+      "id": "part_035",
+      "name": "张嘴",
+      "file": "/live2d/model/035_part_035.png",
+      "x": 501,
+      "y": 273,
+      "w": 21,
+      "h": 19,
+      "bone": "head",
+      "z": 59,
+      "toggle": null,
+      "feature": "mouth-open",
+      "pivot": [
+        511,
+        282
+      ]
+    },
+    {
+      "id": "part_036",
+      "name": "左侧发",
+      "file": "/live2d/model/036_part_036.png",
+      "x": 367,
+      "y": 95,
+      "w": 77,
+      "h": 224,
+      "bone": "hairSideL",
+      "z": 65,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_037",
+      "name": "左刘海外",
+      "file": "/live2d/model/037_part_037.png",
+      "x": 396,
+      "y": 66,
+      "w": 75,
+      "h": 223,
+      "bone": "head",
+      "z": 65,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_038",
+      "name": "左刘海内",
+      "file": "/live2d/model/038_part_038.png",
+      "x": 438,
+      "y": 62,
+      "w": 66,
+      "h": 199,
+      "bone": "head",
+      "z": 65,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_039",
+      "name": "中刘海",
+      "file": "/live2d/model/039_part_039.png",
+      "x": 484,
+      "y": 62,
+      "w": 65,
+      "h": 213,
+      "bone": "head",
+      "z": 65,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_040",
+      "name": "右刘海内",
+      "file": "/live2d/model/040_part_040.png",
+      "x": 526,
+      "y": 62,
+      "w": 64,
+      "h": 207,
+      "bone": "head",
+      "z": 65,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_041",
+      "name": "右刘海外",
+      "file": "/live2d/model/041_part_041.png",
+      "x": 562,
+      "y": 68,
+      "w": 82,
+      "h": 238,
+      "bone": "head",
+      "z": 65,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_042",
+      "name": "右侧发",
+      "file": "/live2d/model/042_part_042.png",
+      "x": 596,
+      "y": 105,
+      "w": 67,
+      "h": 210,
+      "bone": "hairSideR",
+      "z": 65,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_044",
+      "name": "连帽衫衣身",
+      "file": "/live2d/model/044_part_044.png",
+      "x": 355,
+      "y": 350,
+      "w": 308,
+      "h": 441,
+      "bone": "torso",
+      "z": 75,
+      "toggle": "hoodie",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_045",
+      "name": "左袖上段",
+      "file": "/live2d/model/045_part_045.png",
+      "x": 304,
+      "y": 348,
+      "w": 108,
+      "h": 253,
+      "bone": "upperArmL",
+      "z": 77,
+      "toggle": "hoodie",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_048",
+      "name": "右袖上段",
+      "file": "/live2d/model/048_part_048.png",
+      "x": 611,
+      "y": 350,
+      "w": 110,
+      "h": 251,
+      "bone": "upperArmR",
+      "z": 77,
+      "toggle": "hoodie",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_046",
+      "name": "左袖下段",
+      "file": "/live2d/model/046_part_046.png",
+      "x": 259,
+      "y": 527,
+      "w": 140,
+      "h": 251,
+      "bone": "forearmL",
+      "z": 78,
+      "toggle": "hoodie",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_049",
+      "name": "右袖下段",
+      "file": "/live2d/model/049_part_049.png",
+      "x": 626,
+      "y": 528,
+      "w": 140,
+      "h": 250,
+      "bone": "forearmR",
+      "z": 78,
+      "toggle": "hoodie",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_051",
+      "name": "左外短裤",
+      "file": "/live2d/model/051_part_051.png",
+      "x": 366,
+      "y": 742,
+      "w": 149,
+      "h": 98,
+      "bone": "pelvis",
+      "z": 81,
+      "toggle": "shorts",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_052",
+      "name": "右外短裤",
+      "file": "/live2d/model/052_part_052.png",
+      "x": 509,
+      "y": 742,
+      "w": 147,
+      "h": 98,
+      "bone": "pelvis",
+      "z": 81,
+      "toggle": "shorts",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_053",
+      "name": "左上袜套",
+      "file": "/live2d/model/053_part_053.png",
+      "x": 377,
+      "y": 1112,
+      "w": 87,
+      "h": 105,
+      "bone": "calfL",
+      "z": 82,
+      "toggle": "socks",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_055",
+      "name": "左下袜套",
+      "file": "/live2d/model/055_part_055.png",
+      "x": 373,
+      "y": 1206,
+      "w": 89,
+      "h": 166,
+      "bone": "calfL",
+      "z": 82,
+      "toggle": "socks",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_056",
+      "name": "右上袜套",
+      "file": "/live2d/model/056_part_056.png",
+      "x": 558,
+      "y": 1112,
+      "w": 86,
+      "h": 105,
+      "bone": "calfR",
+      "z": 82,
+      "toggle": "socks",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_058",
+      "name": "右下袜套",
+      "file": "/live2d/model/058_part_058.png",
+      "x": 559,
+      "y": 1206,
+      "w": 89,
+      "h": 166,
+      "bone": "calfR",
+      "z": 82,
+      "toggle": "socks",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_054",
+      "name": "左束带",
+      "file": "/live2d/model/054_part_054.png",
+      "x": 375,
+      "y": 1170,
+      "w": 87,
+      "h": 74,
+      "bone": "calfL",
+      "z": 83,
+      "toggle": "socks",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_057",
+      "name": "右束带",
+      "file": "/live2d/model/057_part_057.png",
+      "x": 559,
+      "y": 1170,
+      "w": 86,
+      "h": 74,
+      "bone": "calfR",
+      "z": 83,
+      "toggle": "socks",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_007",
+      "name": "左手",
+      "file": "/live2d/model/007_part_007.png",
+      "x": 300,
+      "y": 755,
+      "w": 47,
+      "h": 90,
+      "bone": "handL",
+      "z": 86,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_010",
+      "name": "右手",
+      "file": "/live2d/model/010_part_010.png",
+      "x": 674,
+      "y": 753,
+      "w": 47,
+      "h": 91,
+      "bone": "handR",
+      "z": 86,
+      "toggle": null,
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_047",
+      "name": "左袖口",
+      "file": "/live2d/model/047_part_047.png",
+      "x": 272,
+      "y": 731,
+      "w": 92,
+      "h": 83,
+      "bone": "handL",
+      "z": 88,
+      "toggle": "hoodie",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_050",
+      "name": "右袖口",
+      "file": "/live2d/model/050_part_050.png",
+      "x": 664,
+      "y": 731,
+      "w": 89,
+      "h": 84,
+      "bone": "handR",
+      "z": 88,
+      "toggle": "hoodie",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_059",
+      "name": "左鞋",
+      "file": "/live2d/model/059_part_059.png",
+      "x": 363,
+      "y": 1319,
+      "w": 95,
+      "h": 161,
+      "bone": "footL",
+      "z": 91,
+      "toggle": "shoes",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_060",
+      "name": "右鞋",
+      "file": "/live2d/model/060_part_060.png",
+      "x": 562,
+      "y": 1319,
+      "w": 94,
+      "h": 161,
+      "bone": "footR",
+      "z": 91,
+      "toggle": "shoes",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_064",
+      "name": "花瓣与飘带",
+      "file": "/live2d/model/064_part_064.png",
+      "x": 630,
+      "y": 59,
+      "w": 70,
+      "h": 152,
+      "bone": "head",
+      "z": 91,
+      "toggle": "ornaments",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_061",
+      "name": "左星星发夹",
+      "file": "/live2d/model/061_part_061.png",
+      "x": 394,
+      "y": 159,
+      "w": 54,
+      "h": 64,
+      "bone": "head",
+      "z": 92,
+      "toggle": "ornaments",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_063",
+      "name": "深蓝蝴蝶结",
+      "file": "/live2d/model/063_part_063.png",
+      "x": 554,
+      "y": 47,
+      "w": 146,
+      "h": 189,
+      "bone": "head",
+      "z": 92,
+      "toggle": "ornaments",
+      "feature": null,
+      "pivot": null
+    },
+    {
+      "id": "part_062",
+      "name": "右金色发夹",
+      "file": "/live2d/model/062_part_062.png",
+      "x": 555,
+      "y": 84,
+      "w": 76,
+      "h": 152,
+      "bone": "head",
+      "z": 93,
+      "toggle": "ornaments",
+      "feature": null,
+      "pivot": null
+    }
+  ],
+  "toggles": [
+    "hoodie",
+    "shorts",
+    "socks",
+    "shoes",
+    "ornaments"
+  ],
+  "features": [
+    "blink",
+    "gaze",
+    "mouthOpen",
+    "headFollow",
+    "breathing",
+    "jointDrag"
+  ]
+}

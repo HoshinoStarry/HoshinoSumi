@@ -1,0 +1,357 @@
+{
+  "notice": "This is a Cubism Editor binding specification, not a compiled moc3 binary.",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "psd": "蓝发少女_Live2D分层源文件.psd",
+  "parameters": [
+    {
+      "id": "ParamAngleX",
+      "min": -30,
+      "default": 0,
+      "max": 30,
+      "target": "head horizontal"
+    },
+    {
+      "id": "ParamAngleY",
+      "min": -30,
+      "default": 0,
+      "max": 30,
+      "target": "head vertical"
+    },
+    {
+      "id": "ParamAngleZ",
+      "min": -30,
+      "default": 0,
+      "max": 30,
+      "target": "head roll"
+    },
+    {
+      "id": "ParamEyeLOpen",
+      "min": 0,
+      "default": 1,
+      "max": 1,
+      "target": "left blink"
+    },
+    {
+      "id": "ParamEyeROpen",
+      "min": 0,
+      "default": 1,
+      "max": 1,
+      "target": "right blink"
+    },
+    {
+      "id": "ParamEyeBallX",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "gaze horizontal"
+    },
+    {
+      "id": "ParamEyeBallY",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "gaze vertical"
+    },
+    {
+      "id": "ParamMouthOpenY",
+      "min": 0,
+      "default": 0,
+      "max": 1,
+      "target": "mouth open"
+    },
+    {
+      "id": "ParamMouthForm",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "mouth expression"
+    },
+    {
+      "id": "ParamBodyAngleX",
+      "min": -10,
+      "default": 0,
+      "max": 10,
+      "target": "torso sway"
+    },
+    {
+      "id": "ParamBreath",
+      "min": 0,
+      "default": 0,
+      "max": 1,
+      "target": "breathing"
+    },
+    {
+      "id": "ParamArmLA",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "left shoulder"
+    },
+    {
+      "id": "ParamArmLB",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "left elbow"
+    },
+    {
+      "id": "ParamArmRA",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "right shoulder"
+    },
+    {
+      "id": "ParamArmRB",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "right elbow"
+    },
+    {
+      "id": "ParamLegL",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "left hip/knee"
+    },
+    {
+      "id": "ParamLegR",
+      "min": -1,
+      "default": 0,
+      "max": 1,
+      "target": "right hip/knee"
+    },
+    {
+      "id": "ParamOutfitHoodie",
+      "min": 0,
+      "default": 1,
+      "max": 1,
+      "target": "hoodie opacity"
+    },
+    {
+      "id": "ParamOutfitShorts",
+      "min": 0,
+      "default": 1,
+      "max": 1,
+      "target": "outer shorts opacity"
+    },
+    {
+      "id": "ParamOutfitSocks",
+      "min": 0,
+      "default": 1,
+      "max": 1,
+      "target": "socks opacity"
+    },
+    {
+      "id": "ParamOutfitShoes",
+      "min": 0,
+      "default": 1,
+      "max": 1,
+      "target": "shoes opacity"
+    },
+    {
+      "id": "ParamHairOrnaments",
+      "min": 0,
+      "default": 1,
+      "max": 1,
+      "target": "ornament opacity"
+    }
+  ],
+  "bones": {
+    "root": {
+      "parent": null,
+      "pivot": [
+        512,
+        820
+      ],
+      "min": -5,
+      "max": 5
+    },
+    "torso": {
+      "parent": "root",
+      "pivot": [
+        512,
+        650
+      ],
+      "min": -10,
+      "max": 10
+    },
+    "pelvis": {
+      "parent": "torso",
+      "pivot": [
+        512,
+        754
+      ],
+      "min": -8,
+      "max": 8
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        512,
+        326
+      ],
+      "min": -18,
+      "max": 18
+    },
+    "hairBunL": {
+      "parent": "head",
+      "pivot": [
+        415,
+        82
+      ],
+      "min": -12,
+      "max": 12
+    },
+    "hairBunR": {
+      "parent": "head",
+      "pivot": [
+        609,
+        82
+      ],
+      "min": -12,
+      "max": 12
+    },
+    "hairSideL": {
+      "parent": "head",
+      "pivot": [
+        400,
+        178
+      ],
+      "min": -14,
+      "max": 14
+    },
+    "hairSideR": {
+      "parent": "head",
+      "pivot": [
+        624,
+        178
+      ],
+      "min": -14,
+      "max": 14
+    },
+    "upperArmL": {
+      "parent": "torso",
+      "pivot": [
+        405,
+        360
+      ],
+      "min": -65,
+      "max": 45
+    },
+    "forearmL": {
+      "parent": "upperArmL",
+      "pivot": [
+        369,
+        570
+      ],
+      "min": -85,
+      "max": 70
+    },
+    "handL": {
+      "parent": "forearmL",
+      "pivot": [
+        320,
+        785
+      ],
+      "min": -40,
+      "max": 40
+    },
+    "upperArmR": {
+      "parent": "torso",
+      "pivot": [
+        619,
+        360
+      ],
+      "min": -45,
+      "max": 65
+    },
+    "forearmR": {
+      "parent": "upperArmR",
+      "pivot": [
+        655,
+        570
+      ],
+      "min": -70,
+      "max": 85
+    },
+    "handR": {
+      "parent": "forearmR",
+      "pivot": [
+        704,
+        785
+      ],
+      "min": -40,
+      "max": 40
+    },
+    "thighL": {
+      "parent": "pelvis",
+      "pivot": [
+        457,
+        754
+      ],
+      "min": -30,
+      "max": 30
+    },
+    "calfL": {
+      "parent": "thighL",
+      "pivot": [
+        442,
+        1010
+      ],
+      "min": -15,
+      "max": 65
+    },
+    "footL": {
+      "parent": "calfL",
+      "pivot": [
+        428,
+        1370
+      ],
+      "min": -25,
+      "max": 25
+    },
+    "thighR": {
+      "parent": "pelvis",
+      "pivot": [
+        567,
+        754
+      ],
+      "min": -30,
+      "max": 30
+    },
+    "calfR": {
+      "parent": "thighR",
+      "pivot": [
+        582,
+        1010
+      ],
+      "min": -65,
+      "max": 15
+    },
+    "footR": {
+      "parent": "calfR",
+      "pivot": [
+        596,
+        1370
+      ],
+      "min": -25,
+      "max": 25
+    }
+  },
+  "recommended_deformer_order": [
+    "root",
+    "torso",
+    "pelvis",
+    "head",
+    "hair",
+    "arms",
+    "legs",
+    "face",
+    "clothes"
+  ]
+}
