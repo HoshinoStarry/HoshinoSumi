@@ -271,7 +271,6 @@ onBeforeUnmount(() => {
 
       <section class="downloads">
         <p class="control-label">制作文件</p>
-        <a href="/live2d/downloads/蓝发少女_Live2D分层源文件.psd" download>分层 PSD</a>
         <a href="/live2d/downloads/Live2D_Cubism绑定规格.json" download>Cubism 绑定规格</a>
       </section>
       <p class="shortcuts">B 眨眼 · W 挥手 · T 说话 · J 关节 · R 复位</p>
