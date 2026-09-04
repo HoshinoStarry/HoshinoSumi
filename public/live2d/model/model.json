@@ -4,7 +4,12 @@
     1024,
     1536
   ],
-  "format": "layered-2d-web-v1",
+  "format": "individually-generated-layered-2d-web-v2",
+  "generation": {
+    "method": "one independent image-generation task per visible element",
+    "element_count": 64,
+    "background": "true alpha transparency"
+  },
   "source_psd": "蓝发少女_Live2D分层源文件.psd",
   "bones": {
     "root": {
